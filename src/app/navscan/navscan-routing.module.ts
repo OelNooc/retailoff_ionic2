@@ -5,8 +5,45 @@ import { NavscanPage } from './navscan.page';
 
 const routes: Routes = [
   {
+    path: 'navscan',
+    component: NavscanPage,
+    children: [
+      {
+        path: 'scan',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../scan/scan.module').then(m => m.ScanPageModule)
+          }
+        ]
+      },
+      {
+        path: 'historial',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../historial-scan/historial-scan.module').then(m => m.HistorialScanPageModule)
+          },
+          {
+            path: 'map/:geo',
+            loadChildren: () =>
+              import('../map/map.module').then(m => m.MapPageModule)
+          }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: 'navscan/scan',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  {
     path: '',
-    component: NavscanPage
+    redirectTo: 'navscan/scan',
+    pathMatch: 'full'
   }
 ];
 

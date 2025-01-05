@@ -5,9 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">scan</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-slide>
+    <ion-button expand="full"
+                fill="outline"
+                size="large"
+                shape="round"
+                (click)="scan()">
+                Escanear Código
+              </ion-button>
+  </ion-slide>
 </ion-content>

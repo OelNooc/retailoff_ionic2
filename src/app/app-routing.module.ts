@@ -27,6 +27,22 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
   },
+  {
+    path: 'map',
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+  },
+  {
+    path: 'historial-scan',
+    loadChildren: () => import('./historial-scan/historial-scan.module').then( m => m.HistorialScanPageModule)
+  },
+  {
+    path: 'scan',
+    loadChildren: () => import('./scan/scan.module').then( m => m.ScanPageModule)
+  },
+  {
+    path: 'navscan',
+    loadChildren: () => import('./navscan/navscan.module').then( m => m.NavscanPageModule)
+  },
 ];
 
 @NgModule({

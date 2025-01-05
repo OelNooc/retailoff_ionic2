@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
     "@awesome-cordova-plugins/barcode-scanner": "^6.13.0",
+    "@awesome-cordova-plugins/in-app-browser": "^6.13.0",
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
@@ -44,6 +45,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
+    "cordova-plugin-inappbrowser": "^6.0.0",
     "eslint": "^9.16.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.1",
@@ -61,7 +63,8 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "phonegap-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {},
+      "cordova-plugin-inappbrowser": {}
     }
   }
 }

@@ -25,6 +25,7 @@
     "@awesome-cordova-plugins/barcode-scanner": "^6.13.0",
     "@awesome-cordova-plugins/in-app-browser": "^6.13.0",
     "@ionic/angular": "^8.0.0",
+    "@ionic/storage": "^4.0.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -46,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "cordova-plugin-inappbrowser": "^6.0.0",
+    "cordova-sqlite-storage": "^6.1.0",
     "eslint": "^9.16.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.1",
@@ -64,7 +66,8 @@
   "cordova": {
     "plugins": {
       "phonegap-plugin-barcodescanner": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-sqlite-storage": {}
     }
   }
 }

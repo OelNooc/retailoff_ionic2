@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-navscan',
   templateUrl: './navscan.page.html',
   styleUrls: ['./navscan.page.scss'],
+  standalone: false
 })
 export class NavscanPage implements OnInit {
 

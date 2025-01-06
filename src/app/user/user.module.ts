@@ -11,6 +11,7 @@ import { UserPage } from './user.page';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MenuPageModule } from '../menu/menu.module';
+import { NavscanPageModule } from '../navscan/navscan.module';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     IonicModule,
     UserPageRoutingModule,
     RouterModule.forChild(routes),
-    MenuPageModule
+    MenuPageModule,
+    NavscanPageModule,
   ],
   declarations: [UserPage]
 })

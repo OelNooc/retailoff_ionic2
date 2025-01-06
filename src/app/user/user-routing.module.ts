@@ -6,8 +6,20 @@ import { UserPage } from './user.page';
 const routes: Routes = [
   {
     path: '',
-    component: UserPage
-  }
+    component: UserPage,
+    children: [
+      {
+        path: 'navscan',
+        loadChildren: () =>
+          import('../navscan/navscan.module').then(m => m.NavscanPageModule),
+      },
+      {
+        path: '',
+        redirectTo: 'navscan',
+        pathMatch: 'full',
+      },
+    ],
+  },
 ];
 
 @NgModule({

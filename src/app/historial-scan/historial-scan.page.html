@@ -5,9 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">historial-scan</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let scan of scanHistory">
+      <ion-label>
+        <h2>{{ scan.text }}</h2>
+        <p>{{ scan.format }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <p *ngIf="scanHistory.length === 0">No hay escaneos registrados.</p>
 </ion-content>

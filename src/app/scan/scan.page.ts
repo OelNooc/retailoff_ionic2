@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
     selector: 'app-scan',
     templateUrl: './scan.page.html',
     styleUrls: ['./scan.page.scss'],
+    standalone: false
   })
   export class ScanPage {
 
@@ -19,6 +20,10 @@ import { NavController } from '@ionic/angular';
     scanQRCode() {
         this.barcodeScanner.scan().then((barcodeData) => {
           console.log('Barcode data', barcodeData);
+
+          const history = JSON.parse(localStorage.getItem('scanHistory') || '[]');
+          history.push(barcodeData);
+          localStorage.setItem('scanHistory', JSON.stringify(history));
     
           if (barcodeData.text.startsWith('http://') || barcodeData.text.startsWith('https://')) {
             this.inAppBrowser.create(barcodeData.text, '_system');
@@ -27,7 +32,7 @@ import { NavController } from '@ionic/angular';
             const latitude = parseFloat(geoData[0].replace('geo:', ''));
             const longitude = parseFloat(geoData[1]);
             
-            this.navCtrl.navigateForward(['/map', { latitude, longitude }]);
+            this.navCtrl.navigateForward(`/map?latitude=${latitude}&longitude=${longitude}`);
           }
         }).catch((err) => {
           console.error('Error en el escaneo', err);
